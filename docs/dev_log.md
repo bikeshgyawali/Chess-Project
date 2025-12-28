@@ -1,0 +1,1 @@
+Just starting the project, for today my main goal would be to just have a board in place. My short term goal is to have a chess board working. Structure it in a way that Player 1 moves, switches to Player 2. And then for the long term have the choice to play against an engine. 
