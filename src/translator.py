@@ -22,10 +22,3 @@ def final_co_ordinate_finder(strs):
     final_file = hash[alpha_placeholder]
 
     return [final_rank,final_file]
-
-
-
-    
-    
-
-    
