@@ -1,3 +1,5 @@
+#Game loop
+
 move_list = []
 white_turn = True
 black_turn = False
