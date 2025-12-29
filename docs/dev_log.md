@@ -12,3 +12,5 @@ So today I will research on the algebraic notation (I think that is what its cal
 I encountered an issue where the grid systems were inverted in the translator.py file and board.py. It was simple fix but took a while to figure out.
 
 I worked on a rudimentary move function for the board. It is not a good solution yet, but i just want to see it work for now.
+
+As the project is getting larger and larger I am finding it harder to maintain. The logic feels hard to follow through even though I am trying my best to use OOP principles and functional programming principles. Wonder how much worse it would be if I did not use those.
