@@ -2,7 +2,7 @@
 
 def final_co_ordinate_finder(strs):
 
-    final_rank = int(strs[len(strs)-1])-1
+    final_rank = 8 - int(strs[len(strs)-1])
 
     #Hash map to define the a-h files with nums
 
