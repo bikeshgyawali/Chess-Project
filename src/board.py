@@ -32,9 +32,28 @@ class Board:
         self.grid[7][3] = Queen("Black", [7, 3])
         self.grid[7][4] = King("Black", [7, 4])
 
-    def move():
-        
-        pass
+    def move(self, piece_name, color, target_coords):
+
+        target_row, target_col = target_coords
+
+        for r in range(8):
+            for c in range(8):
+                item = self.grid[r][c]
+                
+
+                if item != 0 and item.name == piece_name and item.color == color:
+                    
+
+                    self.grid[target_row][target_col] = item
+
+                    self.grid[r][c] = 0
+
+                    item.position = [target_row, target_col]
+                    
+                    return True 
+                    
+        return False 
+            
 
 my_chess_board = Board()
 
