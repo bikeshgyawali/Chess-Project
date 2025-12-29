@@ -1,4 +1,5 @@
 from pieces import Pawn, Rook, Queen, King, Bishop, Knight
+from main import move_list
 
 #Using 2d vector for chess board mapping
 
@@ -31,7 +32,9 @@ class Board:
         self.grid[7][3] = Queen("Black", [7, 3])
         self.grid[7][4] = King("Black", [7, 4])
 
-
+    def move():
+        
+        pass
 
 my_chess_board = Board()
 

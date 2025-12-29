@@ -7,7 +7,6 @@ class Piece():
         self.position = position
 
 
-
 class Bishop(Piece):
     def __init__(self, color, position):
 

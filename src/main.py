@@ -14,7 +14,7 @@ while(is_checkmate == False):
         black_turn = True
         move_list.append(white_turn_tracker)
 
-    if(black_turn == True):
+    elif(black_turn == True):
         black_turn_tracker = input("Black to move : ")
         black_turn = False
         white_turn = True

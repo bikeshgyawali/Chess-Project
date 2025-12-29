@@ -9,3 +9,4 @@ Date : Dec 29 2025
 Yesterday I started work on the input translator. But it only translates the final position, but not the type of piece it is, if it is capturing a piece or not, etc.
 So today I will research on the algebraic notation (I think that is what its called) and implement a solution for it.
 
+I encountered an issue where the grid systems were inverted in the translator.py file and board.py. It was simple fix but took a while to figure out.
