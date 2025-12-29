@@ -14,15 +14,36 @@ while(is_checkmate == False):
     if(white_turn == True):
         
         white_turn_tracker = input("White to move : ")
-        white_turn = False
-        black_turn = True
-        move_list.append(white_turn_tracker)
+        
+
+        name = get_piece_name(white_turn_tracker)
+        final_pos = final_co_ordinate_finder(white_turn_tracker)
+        sucess = game_board.move(name, "White", final_pos)
+
+        if(sucess == True):
+            white_turn = False
+            black_turn = True
+            move_list.append(white_turn_tracker)
+        else:
+            print("Error")
+
+        
 
     elif(black_turn == True):
         black_turn_tracker = input("Black to move : ")
-        black_turn = False
-        white_turn = True
-        move_list.append(black_turn_tracker)
+        
+
+        name = get_piece_name(black_turn_tracker)
+        final_pos = final_co_ordinate_finder(black_turn_tracker)
+        sucess = game_board.move(name, "Black", final_pos)
+
+        if(sucess == True):
+            black_turn = False
+            white_turn = True
+            move_list.append(black_turn_tracker)
+        else:
+            print("Error")
+        
         
 
 
