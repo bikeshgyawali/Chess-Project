@@ -39,20 +39,30 @@ class Board:
             for c in range(8):
                 item = self.grid[r][c]
                 
-
                 if item != 0 and item.name == piece_name and item.color == color:
-                    
-
+                    # Found the piece, move it
                     self.grid[target_row][target_col] = item
-
                     self.grid[r][c] = 0
-
                     item.position = [target_row, target_col]
-                    
                     return True 
                     
         return False 
             
+    def display(self):
+        print("\n  a b c d e f g h") # Column labels
+        for r in range(7, -1, -1): # Print from rank 8 down to 1
+            row_string = f"{r+1} "
+            for c in range(8):
+                item = self.grid[r][c]
+                if item == 0:
+                    row_string += ". " # Empty square
+                else:
+                    # Get the first letter of the name (e.g., 'P' for Pawn)
+                    # Use lowercase for Black, Uppercase for White
+                    char = item.name[0] if item.color == "White" else item.name[0].lower()
+                    row_string += f"{char} "
+            print(row_string)
+        print("  a b c d e f g h\n")
 
 
 

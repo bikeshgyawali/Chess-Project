@@ -6,43 +6,48 @@ game_board = Board()
 
 move_list = []
 white_turn = True
-black_turn = False
 is_checkmate = False
 
-while(is_checkmate == False):
-
-    if(white_turn == True):
+while not is_checkmate:
+    game_board.display()
+    if white_turn:
         
-        white_turn_tracker = input("White to move : ")
+        move_input = input("White to move (e.g., e4 or Ra1a2): ")
         
-
-        name = get_piece_name(white_turn_tracker)
-        final_pos = final_co_ordinate_finder(white_turn_tracker)
-        sucess = game_board.move(name, "White", final_pos)
-
-        if(sucess == True):
+        # Get piece name and destination
+        piece_name = get_piece_name(move_input)
+        dest_coords = final_co_ordinate_finder(move_input)
+        
+        if piece_name == "Error":
+            print("Invalid format!")
+            continue
+        
+        success = game_board.move(piece_name, "White", dest_coords)
+        
+        if success:
             white_turn = False
-            black_turn = True
-            move_list.append(white_turn_tracker)
+            move_list.append(move_input)
         else:
-            print("Error")
-
+            print("Illegal move!")
+    
+    else:
+        move_input = input("Black to move (e.g., e5 or ra7a5): ")
         
-
-    elif(black_turn == True):
-        black_turn_tracker = input("Black to move : ")
+        # Get piece name and destination
+        piece_name = get_piece_name(move_input)
+        dest_coords = final_co_ordinate_finder(move_input)
         
-
-        name = get_piece_name(black_turn_tracker)
-        final_pos = final_co_ordinate_finder(black_turn_tracker)
-        sucess = game_board.move(name, "Black", final_pos)
-
-        if(sucess == True):
-            black_turn = False
+        if piece_name == "Error":
+            print("Invalid format!")
+            continue
+        
+        success = game_board.move(piece_name, "Black", dest_coords)
+        
+        if success:
             white_turn = True
-            move_list.append(black_turn_tracker)
+            move_list.append(move_input)
         else:
-            print("Error")
+            print("Illegal move!")
         
         
 
