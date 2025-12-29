@@ -1,4 +1,8 @@
 #Game loop
+from board import Board
+from translator import get_piece_name, final_co_ordinate_finder
+
+game_board = Board()
 
 move_list = []
 white_turn = True

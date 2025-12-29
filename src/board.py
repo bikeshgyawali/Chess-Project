@@ -1,5 +1,4 @@
 from pieces import Pawn, Rook, Queen, King, Bishop, Knight
-from main import move_list
 
 #Using 2d vector for chess board mapping
 
@@ -55,7 +54,6 @@ class Board:
         return False 
             
 
-my_chess_board = Board()
 
 
 

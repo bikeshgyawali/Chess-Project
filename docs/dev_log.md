@@ -10,3 +10,5 @@ Yesterday I started work on the input translator. But it only translates the fin
 So today I will research on the algebraic notation (I think that is what its called) and implement a solution for it.
 
 I encountered an issue where the grid systems were inverted in the translator.py file and board.py. It was simple fix but took a while to figure out.
+
+I worked on a rudimentary move function for the board. It is not a good solution yet, but i just want to see it work for now.
