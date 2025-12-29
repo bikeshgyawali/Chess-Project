@@ -33,21 +33,24 @@ def is_capture_move(strs):
     
 #Function to find the piece type from notation
     
-def piece_type_finder(strs):
-    if(len(strs) == 2):
-        return "Pawn"
-    elif(strs[0].upper() == "R"):
-        return  "Rook"
-    elif(strs[0].upper() == "N"):
-        return  "Knight"
-    elif(strs[0].upper() == "B"):
-        return  "Bishop"
-    elif(strs[0].upper() == "Q"):
-        return  "Queen"
-    elif(strs[0].upper() == "K"):
-        return  "King"
-    else:
-        return "Error"
+def get_piece_name(strs: str) -> str:
     
+    if len(strs) == 2:
+        return "Pawn"
 
+    piece_map = {
+        "R": "Rook",
+        "N": "Knight",
+        "B": "Bishop",
+        "Q": "Queen",
+        "K": "King"
+    }
+   
+    first_char = strs[0].upper()
+
+
+    return piece_map.get(first_char, "Error")
+
+
+    
 
