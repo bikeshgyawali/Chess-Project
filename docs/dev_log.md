@@ -16,3 +16,9 @@ I worked on a rudimentary move function for the board. It is not a good solution
 As the project is getting larger and larger I am finding it harder to maintain. The logic feels hard to follow through even though I am trying my best to use OOP principles and functional programming principles. Wonder how much worse it would be if I did not use those.
 
 I also am starting working on the validation of piece moves right now, dont think it will be finished by today though.
+
+Date : Dec 30 2025
+
+Today I will be working on the move validation logic of the King, whereas yesterday I finished the logic of the Knight. These two pieces are the easiest since they dont have to check for if something is between their path or not.
+
+I am a bit worried on how I would handle the other pieces, but that is a problem for the future me.
