@@ -17,4 +17,8 @@ I can see how difficuly it may get to follow through, but I dont see how OOP wou
 
 I did implement it, but it feels very iffy. I think im going to leave it up till the knight for today, more tomorrow.
 
+Dec 30 2025
+
+Move validation for the king is done. Of course, it is quite similar to the knight so I could easily just copy and paste the same block. I just add to tweak some offsets and variables.
+
 

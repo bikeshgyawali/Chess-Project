@@ -22,3 +22,5 @@ Date : Dec 30 2025
 Today I will be working on the move validation logic of the King, whereas yesterday I finished the logic of the Knight. These two pieces are the easiest since they dont have to check for if something is between their path or not.
 
 I am a bit worried on how I would handle the other pieces, but that is a problem for the future me.
+
+The validation functions use a lot of if statements, but I see no way around this. A necessary evil. I also found a bug before a commit where I used "return False" instead of "continue". This just returned false in my loop before looking at all my cases so continue is the best tool for that case.
