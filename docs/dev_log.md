@@ -14,3 +14,5 @@ I encountered an issue where the grid systems were inverted in the translator.py
 I worked on a rudimentary move function for the board. It is not a good solution yet, but i just want to see it work for now.
 
 As the project is getting larger and larger I am finding it harder to maintain. The logic feels hard to follow through even though I am trying my best to use OOP principles and functional programming principles. Wonder how much worse it would be if I did not use those.
+
+I also am starting working on the validation of piece moves right now, dont think it will be finished by today though.
