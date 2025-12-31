@@ -32,6 +32,65 @@ class Board:
         self.grid[7][3] = Queen("Black", [7, 3])
         self.grid[7][4] = King("Black", [7, 4])
 
+    def find_king(self, color):
+        for r in range(8):
+            for c in range(8):
+                piece = self.grid[r][c]
+                if piece != 0 and piece.name == "King" and piece.color == color:
+                    return piece.position
+        return None
+
+    def is_in_check(self, color):
+        king_pos = self.find_king(color)
+        if not king_pos:
+            return False
+
+        opponent_color = "Black" if color == "White" else "White"
+        for r in range(8):
+            for c in range(8):
+                piece = self.grid[r][c]
+                if piece != 0 and piece.color == opponent_color:
+                    if is_move_valid(piece.name, piece.color, king_pos, piece.position, self.grid, color):
+                        return True
+        return False
+
+    def is_in_checkmate(self, color):
+        if not self.is_in_check(color):
+            return False
+
+        for r in range(8):
+            for c in range(8):
+                piece = self.grid[r][c]
+                if piece != 0 and piece.color == color:
+                    initial_pos = piece.position
+                    for tr in range(8):
+                        for tc in range(8):
+                            target_coords = [tr, tc]
+                            target_item = self.grid[tr][tc]
+                            target_piece_color = None if target_item == 0 else target_item.color
+                            
+                            if is_move_valid(piece.name, piece.color, target_coords, initial_pos, self.grid, target_piece_color):
+                                # Temporarily make the move
+                                original_piece = self.grid[tr][tc]
+                                self.grid[tr][tc] = piece
+                                self.grid[r][c] = 0
+                                piece.position = [tr, tc]
+
+                                # Check if the king is still in check
+                                if not self.is_in_check(color):
+                                    # Undo the move and return False (not checkmate)
+                                    self.grid[r][c] = piece
+                                    self.grid[tr][tc] = original_piece
+                                    piece.position = initial_pos
+                                    return False
+
+                                # Undo the move
+                                self.grid[r][c] = piece
+                                self.grid[tr][tc] = original_piece
+                                piece.position = initial_pos
+        
+        return True
+
     def move(self, piece_name, color, target_coords):
         target_row, target_col = target_coords
 
@@ -55,6 +114,13 @@ class Board:
                     self.grid[target_row][target_col] = item
                     self.grid[r][c] = 0
                     item.position = [target_row, target_col]
+                    
+                    opponent_color = "Black" if color == "White" else "White"
+                    if self.is_in_check(opponent_color):
+                        print(f"{opponent_color} is in check!")
+                        if self.is_in_checkmate(opponent_color):
+                            print(f"Checkmate! {color} wins.")
+
                     return True
 
         return False
@@ -78,8 +144,3 @@ class Board:
 
             print(row_string)
         print("  a b c d e f g h\n")
-
-
-
-
-
