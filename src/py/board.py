@@ -1,4 +1,5 @@
 from pieces import Pawn, Rook, Queen, King, Bishop, Knight
+from validator import is_move_valid
 
 #Using 2d vector for chess board mapping
 
@@ -32,22 +33,31 @@ class Board:
         self.grid[7][4] = King("Black", [7, 4])
 
     def move(self, piece_name, color, target_coords):
-
         target_row, target_col = target_coords
+
+        # bounds check
+        if not (0 <= target_row < 8 and 0 <= target_col < 8):
+            return False
 
         for r in range(8):
             for c in range(8):
                 item = self.grid[r][c]
-                
-                if item != 0 and item.name == piece_name and item.color == color:
+                if item == 0:
+                    continue
+                if item.name != piece_name or item.color != color:
+                    continue
 
+                target_item = self.grid[target_row][target_col]
+                target_piece_color = None if target_item == 0 else target_item.color
 
+                if is_move_valid(item.name, item.color, [target_row, target_col], [r, c], self.grid, target_piece_color):
+                    # perform move
                     self.grid[target_row][target_col] = item
                     self.grid[r][c] = 0
                     item.position = [target_row, target_col]
-                    return True 
-                    
-        return False 
+                    return True
+
+        return False
             
     def display(self):
 
