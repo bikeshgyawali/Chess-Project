@@ -24,3 +24,12 @@ Today I will be working on the move validation logic of the King, whereas yester
 I am a bit worried on how I would handle the other pieces, but that is a problem for the future me.
 
 The validation functions use a lot of if statements, but I see no way around this. A necessary evil. I also found a bug before a commit where I used "return False" instead of "continue". This just returned false in my loop before looking at all my cases so continue is the best tool for that case.
+
+Date : Dec 31 2025
+
+Today I used an AI assistant to help implement and refine move validation and to integrate legality checks into the board move routine. The changes touched the validator file (added robust rules for Rook, Bishop, Queen, and Pawn) and board file (move dispatch now consults the validator before updating the grid). I treated the AI as a coding collaborator: I reviewed every suggestion, adapted logic to the project's data structures, and verified behavior with the existing game loop and simple sanity checks.
+
+What I did personally:
+- Designed the validation approach and decided when path-blocking and capture logic were required.
+- Reviewed and edited suggested code snippets to match the project's conventions and Piece objects.
+- Ran syntax checks and performed manual move trials via main to confirm legal moves are accepted and illegal moves rejected.
