@@ -1,24 +1,39 @@
-# Chess-Project
+# Chess Project
 
-Core Components
-Game State Management The system represents the chessboard as an 8x8 two-dimensional vector. Individual pieces are instantiated as objects inheriting from a base piece class. This structure maintains the physical locations and properties of all entities on the board.
+This chess project is my version of chess in Python. It is a CLI application built with the intent of learning SWE practices and architecture while focusing on something that would be fun to me.
 
-Turn Control The execution flow is managed by a central game loop that alternates between players. It tracks active turns and maintains a comprehensive history of all moves performed during the session.
+# What I learnt
 
-Input Processing A dedicated utility module handles the translation of algebraic chess notation into grid-based coordinates. This component utilizes hash mapping to convert file characters into integer indices and extracts rank information through string manipulation.
+Modular Architecture: Enforces a clean separation of concerns between board state, piece logic, and user input.
 
-Implementation Details
-Board Indexing The board is indexed using a [row][col] format. In this configuration, the first index represents the rank (vertical position) and the second index represents the file (horizontal position).
+Object-Oriented Design: Utilizes class inheritance for polymorphic piece behavior and maintainable code.
 
-Data Structures
+Move Validation: Implements a unction to ensure all moves comply with (basic) standard chess rules.
 
-2D List: Primary grid for piece placement and board representation.
+State-Aware Game Logic: Accurately detects and handles critical game states, including check and checkmate.
 
-Class Inheritance: Hierarchical structure for piece types.
+Algebraic Notation Parser: Translates standard chess notation into internal board coordinates for gameplay.
 
-Hash Maps: Used for coordinate translation within the functional processing layer.
+# How to run and test
 
-List: Move history tracking.
+To run:
+Navigate to the source directory:
+cd src/py
 
-Future Development
-The project is prepared for the integration of movement execution and piece-specific validation logic. The separation of the parser from the core board logic allows for independent testing of coordinate math before integration with the move execution methods.
+Run the main script:
+python3 main.py
+
+To test:
+Navigate to the root directory of the project.
+Run the test suite:
+python3 -m unittest test/test_chess.py
+
+# Areas to improve
+While I'm proud of the current state of the project, there is always room for growth. Looking ahead, I have identified several areas for future improvement:
+
+Implement special chess moves such as Castling, En Passant, and Pawn Promotion.
+Develop a graphical user interface (GUI) to provide a more visual and user-friendly experience.
+Incorporate features like move history, the ability to undo moves, and game saving/loading.
+Introduce optional time controls to allow for different modes of play.
+
+
