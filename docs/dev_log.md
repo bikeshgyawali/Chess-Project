@@ -33,3 +33,5 @@ What I did personally:
 - Designed the validation approach and decided when path-blocking and capture logic were required.
 - Reviewed and edited suggested code snippets to match the project's conventions and Piece objects.
 - Ran syntax checks and performed manual move trials via main to confirm legal moves are accepted and illegal moves rejected.
+
+Also AI was doing some unecessary imports in the test file, so I had to fix that alongside making sure it uses the right files. (It was bugging out for some reason)
